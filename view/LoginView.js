@@ -10,7 +10,7 @@ import { CustomTextInput } from '../components/CusttomTextInput';
 
 // External Lib's
 
-export default function LoginView() {
+export default props => {
 
   var login = new Login();
 
@@ -34,6 +34,7 @@ export default function LoginView() {
 
   function executeLogin() {
     console.log("Login : " + login.getLogin() + "\n" + "Password : " + login.getPassword())
+    props.navigation.navigate("MainMenu");
   }
 }
 

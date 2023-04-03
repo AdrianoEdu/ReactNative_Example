@@ -1,15 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { Login } from './model/login';
-import LoginView from './view/LoginView';
+import { StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import Route from './routes/Route'
 
 export default function App() {
-
-  var login = new Login();
-
   return (
-    <View style={styles.container}>
-      <LoginView></LoginView>
-    </View>
+    <SafeAreaView style={{flex:1}}>
+      <NavigationContainer>
+        <Route />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 

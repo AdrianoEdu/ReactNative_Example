@@ -1,10 +1,6 @@
-import { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import { CustomButon } from './components/CustomButton';
+import { StyleSheet, Text, View } from 'react-native';
 import { Login } from './model/login';
-
-//Component
-import { CustomTextInput } from './components/CusttomTextInput';
+import LoginView from './view/LoginView';
 
 export default function App() {
 
@@ -12,25 +8,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CustomTextInput
-        title="insert value"
-        press={ (text) => login.setLogin(text) }
-      />
-      <CustomTextInput
-        title="insert password"
-        press={ (text) => login.setPassword(text) }
-      />
-      <CustomButon
-        title = "Register"
-        backgroundColor = "red"
-        click={executeLogin}
-      />
+      <LoginView></LoginView>
     </View>
   );
-
-  function executeLogin() {
-    console.log("Login : " + login.getLogin() + "\n" + "Password : " + login.getPassword())
-  }
 }
 
 const styles = StyleSheet.create({

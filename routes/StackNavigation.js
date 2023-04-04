@@ -5,7 +5,6 @@ import LoginView from "../view/LoginView";
 import MainMenuView from "../view/MainMenuView";
 
 const Stack = createNativeStackNavigator()
-var aaa;
 
 export default props => (
     <Stack.Navigator initialRouteName="Login">

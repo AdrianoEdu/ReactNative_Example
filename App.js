@@ -1,13 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import Route from './routes/Route'
+import StackNavigation from './routes/StackNavigation'
 
 export default function App() {
   return (
     <SafeAreaView style={{flex:1}}>
       <NavigationContainer>
-        <Route />
+        <StackNavigation />
       </NavigationContainer>
     </SafeAreaView>
   );

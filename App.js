@@ -1,14 +1,20 @@
-import { StyleSheet, View } from 'react-native';
+import { Button, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './routes/StackNavigation'
+import Toast from 'react-native-toast-message';
+import { MessageToast } from './components/Toast';
 
 export default function App() {
+
+  var messageToast = new MessageToast();
+
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <NavigationContainer>
         <StackNavigation />
       </NavigationContainer>
+      <Toast config={messageToast.getConfig}/>
     </SafeAreaView>
   );
 }

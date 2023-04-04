@@ -1,6 +1,6 @@
 //Style
 import { StyleSheet, View,Button } from 'react-native';
-import { MessageToast } from '../components/Toast';
+import { MessageToast } from '../components/Toast/Toast';
 
 export default props => {
 

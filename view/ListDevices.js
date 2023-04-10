@@ -1,9 +1,7 @@
 
 import React, {Component} from 'react';
 import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
-
-import { Device } from "../model/device"
-
+import { PMHColors } from '../constant/PMHColors';
 
 export default class FlatListComponent extends Component {
  constructor(props) {
@@ -51,7 +49,6 @@ export default class FlatListComponent extends Component {
  };
 
  render() {
-
 
    let data = [
      { id: 1, name: 'Name - Serial Number', designation: 'Description' },
@@ -121,10 +118,10 @@ const styles = StyleSheet.create({
    fontSize: 18,
  },
  subheading: {
-   color: 'bacl',
+   color: PMHColors.mainWindow,
  },
  itemSeparator: {
-   backgroundColor: 'black',
+   backgroundColor: PMHColors.grey11,
    height: 1,
  },
 });

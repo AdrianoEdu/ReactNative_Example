@@ -7,19 +7,14 @@ const pokemonState = new PokemonState();
 
 export default props => {
 
-  const [cars, setCars] = React.useState([])
+  const [pokemons, setPokemons] = React.useState([])
 
-  React.useEffect(() => {
+  React.useEffect( () => {
     async function getPokemons() {
-      const response = await pokemonState.getPokemons(20, 0);
-      const listPokemon = await response["results"];
-      var listPokemonName = []
+      const response = (await pokemonState.getPokemons(25, 0)).results;
+      const listPokemons = response.map(({name}) => name)
 
-      await listPokemon.forEach(element => {
-        listPokemonName.push(element.name);
-      })
-
-      setCars(listPokemonName);
+      setPokemons(listPokemons);
     }
 
     getPokemons();
@@ -27,28 +22,14 @@ export default props => {
 
   return (
     <View style={styles.container}>
-      <SectionList
-        sections={[
-          { title: 'Pokemons', data: cars },
-        ]}
-        renderItem={({ item }) =>
-          <View style={styles.fff}>
-            <Text style={styles.item}>{item}</Text>
-            <Image
-              source={{
-                uri:
-                  'https://raw.githubusercontent.com/AboutReact/sampleresource/master/input_phone.png',
-              }}
-              style={styles.imageStyle}
-            />
-          </View>}
-        renderSectionHeader={({ section }) => (
-          <Text style={styles.sectionHeader}>{section.title}</Text>
-        )}
-        keyExtractor={item => `basicListEntry-${item}`}
-      />
+      <Button title='click-me' onPress={ () => { setPokemons([...pokemons, ...pokemons]) } }></Button>
+      {
+        pokemons.map( pokemon =>
+        <View>
+          <Text>{pokemon}</Text>
+        </View> )
+      }
     </View>
-
   );
 }
 
@@ -65,7 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fffafa',
     padding: 20,
     marginVertical: 8,
-    width: '85%'
+    width: '100%'
   },
   header: {
     fontSize: 32,

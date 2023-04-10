@@ -12,6 +12,7 @@ export default props => {
         <Button title='Error' onPress={messageToast.error("Ola", "Adriano")}></Button>
         <Button title='Info' onPress={messageToast.info("Ola", "Adriano")}></Button>
         <Button title='Get Pokemon' onPress={ () => { props.navigation.navigate("Pokedex") } }></Button>
+        <Button title='Devices' onPress={ () => { props.navigation.navigate("Device")}}></Button>
     </View>
   );
 }
